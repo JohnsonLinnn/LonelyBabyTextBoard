@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>邊緣留言板</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div class="container">
+    <ul class="guides" style="border: none;"></ul>
+
+</ul>
+</div>
+
+
+
+
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCmhQ9J3CD2tns0dfxH4GVXWAGcjjZ3Uu0",
+            authDomain: "lonelybabytextboard.firebaseapp.com",
+            databaseURL: "https://lonelybabytextboard.firebaseio.com",
+            projectId: "lonelybabytextboard",
+            storageBucket: "lonelybabytextboard.appspot.com",
+            messagingSenderId: "369705523127",
+            appId: "1:369705523127:web:fa8a44180b7bc60eddba32",
+            measurementId: "G-DXBREGKR0S"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db=firebase.firestore();
+    
+        </script>
+        <script src="scripts/view.js"></script>
+</body>
+</html>
