@@ -1,19 +1,30 @@
 let textArray=[] ; 
-let createJSTextArray=[] ; 
+let createJSTextArray=[] ;
+
+
 
 //getting all the string on the database;
 db.collection('submitText').onSnapshot(snapshot=>{
-loadText(snapshot.docs);
-})
-const loadText =(data) =>{
-    let  counter=0;
-    data.forEach(element => {
-        const texts = element.data();
-        textArray[counter]=texts.content;
-        counter++;
-    });
-    draw();
-
+    loadText(snapshot.docs);
+    })
+    const loadText =(data) =>{
+        let  counter=0;
+        data.forEach(element => {
+            const texts = element.data();
+            textArray[counter]=texts.content;
+            counter++;
+        });
+        setupBG();
+        draw();
+        
+    
+    
+    }
+function setupBG(){
+    var canvas = document.getElementById("demoCanvas");
+    var parent = document.getElementById("createjscontainer");
+    canvas.width = parent.offsetWidth;
+    canvas.height = parent.offsetHeight;
 
 }
 

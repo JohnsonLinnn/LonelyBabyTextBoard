@@ -5,8 +5,20 @@ body{
     width:fit-content;
     background-size: cover;
 }
+#createjscontainer{
+    outline-style: dotted;
+
+    position: absolute;
+    top:180px; 
+    right: 20px; 
+    bottom: 90px; 
+    left: 20px;    
+}
 #demoCanvas{
-    
-
-
+    background-color: burlywood;
+    position: absolute;
+    top:0px; 
+    right:0px; 
+    bottom: 0px; 
+    left: 0px;  
 }
