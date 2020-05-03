@@ -1,7 +1,6 @@
 let textArray=[] ; 
 let createJSTextArray=[] ; 
 
-
 //getting all the string on the database;
 db.collection('submitText').onSnapshot(snapshot=>{
 loadText(snapshot.docs);
