@@ -1,6 +1,12 @@
-database.ref('/2020-05-21/').once('value',function (snapshot){
-    snapshot.forEach(function(child) {
-        console.log(child.val())
-         // NOW THE CHILDREN PRINT IN ORDER
+
+
+var wat = database.ref('/2020-05-21/').once('value').then(function (snapshot){
+    
+        wat= snapshot.val();
+        
+        for (var key in wat) {
+            console.log(key);
+        }
     });  
-})
+
+
