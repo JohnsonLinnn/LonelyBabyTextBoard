@@ -1,40 +1,39 @@
 var texts=[];
-var textsDone =false;
+var isSvg =false;
+
 db.collection('submitedText').onSnapshot(snapshot => {
     loadText(snapshot.docs);
 })
     const loadText =(data) =>{
-   
+    //loading data into array
     if (data.length) {
         let i=0;
         data.forEach(doc => {
           const guide = doc.data();
-          console.log(guide);
           texts[i]=guide;
           i++;
-          console.log(texts.length);
         })
-    textsDone =true;
- 
+    //wiping out existing canvas
+    if(isSvg){
+      removeExistCanvas();
+    };
 
-    // List of words
-    var myWords = [{word: "泰迪熊", size: "50"} ]
-    console.log(myWords.length)
-    console.log(texts[0]);
     // set the dimensions and margins of the graph
-    var margin = {top: 10, right: 10, bottom: 10, left: 10},
-        width = 450 - margin.left - margin.right,
-        height = 450 - margin.top - margin.bottom;
+    var margin = {top: 180, right: 20, bottom: 90, left: 20},
+        width = 1460- margin.left - margin.right,
+        height = 800 - margin.top - margin.bottom;
     
     // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
+        .attr("id","canvasForText")
       .append("g")
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
-    console.log("toogood")
-    console.log(texts)
+    
+    console.log(typeof svg);
+
     // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
     // Wordcloud features that are different from one word to the other must be here
     var layout = d3.layout.cloud()
@@ -64,7 +63,12 @@ function draw(words) {
         })
         .text(function(d) { return d.text; });
 
-   
+  isSvg =true;
     }
+function removeExistCanvas() {
+      // Removes an element from the document
+      var element = document.getElementById("canvasForText");
+      element.parentNode.removeChild(element);
+  }
 };
 }

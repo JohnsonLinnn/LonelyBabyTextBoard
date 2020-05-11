@@ -7,7 +7,7 @@ console.log(submitText);
 submitText.addEventListener('submit', (e) => {
   console.log(submitText.inputMsg.value); 
   e.preventDefault();
-    var x = Math.floor(Math.random() * 10) + 1;
+    var x = Math.floor(Math.random() * 50) + 1;
     if(submitText.inputMsg.value!=""){
       db.collection('submitedText').add({
         word: submitText.inputMsg.value,
