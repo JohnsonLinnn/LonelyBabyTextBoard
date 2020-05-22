@@ -13,7 +13,7 @@ const loadText = (data) => {
         const guide = doc.data();
         const li = `
           <li>
-            <div class="collapsible-header grey lighten-4"> ${guide.word}  </div>
+            <div class="collapsible-header grey lighten-4" id=${guide.word} > ${guide.word}  </div>
             <label for="fname">size:</label>
             <input type="text"  value= ${guide.size}></input><br><br>
             <button>delete</button><button>Change</button>
