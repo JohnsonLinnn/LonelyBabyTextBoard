@@ -40,13 +40,15 @@ db.collection('submitedText').onSnapshot(snapshot => {
       .size([width, height])
       .words(texts.map(function(d) { return {text: d.word, size:d.size}; }))
       .padding(5)        //space between words
-      .rotate(function() { return ~~(Math.random() * 1) * 90; })
+      .rotate(function() { return ~~(Math.random() * 1) * 60; })
       .fontSize(function(d) { return d.size; })      // font size of words
       .on("end", draw);
     layout.start();
     console.log("nice");
     // This function takes the output of 'layout' above and draw the words
 // Wordcloud features that are THE SAME from one word to the other can be here
+
+//Open
 function draw(words) {
   svg
     .append("g")
@@ -55,9 +57,10 @@ function draw(words) {
         .data(words)
       .enter().append("text")
         .style("font-size", function(d) { return d.size; })
-        .style("fill", "#69b3a2")
+        .style("fill", "#686963")
         .attr("text-anchor", "middle")
         .style("font-family", "Impact")
+        .style("font-weight", "Bold")
         .attr("transform", function(d) {
           return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
         })
