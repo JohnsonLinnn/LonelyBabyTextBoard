@@ -12,11 +12,13 @@ const loadText = (data) => {
       data.forEach(doc => {
         const guide = doc.data();
         const li = `
-          <li>
-            <div class="collapsible-header grey lighten-4" id=${guide.word} > ${guide.word}  </div>
-            <label for="fname">size:</label>
-            <input type="text"  value= ${guide.size}></input><br><br>
+          <li class="collapsible-header grey lighten-4" id=${guide.word}>
+            <div > 
+            <p>${guide.word}<br></p>
+            <label >size:</label><br><br>
+            <input type="text"  value= ${guide.size}></input>
             <button>delete</button><button>Change</button>
+            </div>
           </li>
         `; 
         html += li;
@@ -27,3 +29,4 @@ const loadText = (data) => {
       guideList.innerHTML = '<h5 class="center-align"></h5>';
     }
   };
+
